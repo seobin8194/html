@@ -1,0 +1,33 @@
+<!--
+    하이퍼링크 <a>
+    하이퍼링크란 다른 페이지나 사이트로 연결하는 링크(문자 또는 이미지)
+
+    <a href="사이트 또는 이동할 문서의 위치">링크에 사용될 문자 또는 이미지</a>
+    <a>와 <img> 모두 인라인 요소이므로 <a> 태그 안에 <img> 태그를 넣을 수 있다
+
+    target 속성
+    <a> 태그가 연결한 문서를 어디서에서 열지 설정한다
+    _blank : 링크로 연결된 문서를 새 탭에서 열어 준다(새창 아님 -> 새창은 차단될 수 있다)
+    이름 : 해당 이름으로 설정된 페이지에서 문서를 열어 준다(iframe)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>하이퍼링크</h2>
+    <!--절대경로를 이용하여 네이버 웹 사이트로 이동하는 하이퍼링크 문자-->
+    <p><a href="https://www.naver.com">네이버로 이동</a></p>
+    <!--절대경로를 이용하여 다음 웹 사이트로 이동하는 하이퍼링크 이미지-->
+    <p><a href="http://www.daum.net"><img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="다음 로고"/></a></p>
+    <!--상대경로로 같은 폴더의 다른 파일로 이동하는 하이퍼링크 문자-->
+    <p><a href="./6_이미지.html">이미지 연습</a></p>
+    <!--상대경로로 같은 폴더의 다른 파일로 이동하는 하이퍼링크 이미지-->
+    <p><a href="./6_이미지.html"><img src="./halloween1.png" alt="이미지 연습"/></a></p>
+    <!--상대경로로 같은 폴더의 다른 파일로 이동하는 하이퍼링크 이미지를 새 탭에서 열기-->
+    <p><a href="./6_이미지.html" target="_blank"><img src="./halloween1.png" alt="이미지 연습"/></a></p>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!--
+    목록 태그
+    네비게이션으로 발전 -> css를 입혀 메뉴를 만들 때 사용한다
+    -> 봇에서 목록태그를 인식하면 menu로 인식
+       -> 메뉴건너뛰기 기능구현 
+          -> 리더기는 맨 첫줄부터 읽는데 그러면 장애인들은 페이지를 들을 때마다 메뉴만 엄청 들어야 한다
+    
+    1. 순서가 없는 목록 태그
+    <ul>태그로 시작하고 포함하는 목록은 <li> 태그로 시작한다
+    2. 순서가 있는 목록
+    <ol> 태그로 시작하고 포함하는 목록은 <li> 태그로 시작한다
+
+    type 속성 값
+    1: 숫자로 순서를 설정합니다. <ol type="1"> -> 1, 2, 3, ..
+    A: 알파벳 대문자로 순서를 설정합니다. <ol type="A"> -> A, B, C ..
+    a : 알파벳 소문자로 순서를 설정합니다. <ol type="a"> -> a, b, c ..
+    I : 로마 대문자로 순서를 설정합니다. <ol type="I"> -> I, II, III ...
+    i : 로마 소문자로 순서를 설정합니다. <ol type="i"> -> i, ii, iii ...
+    start 속성의 값
+    시작값을 임의로 설정할 때 사용합니다.
+    <ol type="A" start="3"> -> C, D, E ..
+    
+    3. 사용자 정의 목록 태그
+    용어와 그에 대한 정의를 모아놓은 목록
+    <dl> 태그로 시작하고 <dt> 태그에 용어 이름 <dd>에 용어 정의
+    목록 리스트안에 넣는 목록을 두가지 형태로 나누고 싶을 때 이용한다
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>목록 태그</title>
+</head>
+<body>
+    <h2>목록 태그</h2>
+    <ul>
+        <li>체코</li>
+        <li>오스트리아</li>
+        <li>크로아티아</li>
+    </ul>
+
+    <ol>
+        <li>스페인</li>
+        <li>그리스</li>
+        <li>이탈리아</li>
+    </ol>
+
+    <ul>
+        <li>
+            과일
+            <ol type="a">
+                <li>apple</li>
+            </ol>
+        </li>
+        <li>
+            채소
+            <ol type="i" start="4">
+                <li>onion</li>
+                <li>tomato</li>
+                <li>mushroom</li>
+            </ol>
+        </li>
+    </ul>
+
+    <dl>
+        <dt>1반</dt>
+        <dd>정서빈</dd>
+        <dd>홍길동</dd>
+        <dt>2반</dt>
+        <dd>장길산</dd>
+    </dl> 
+</body>
+</html>

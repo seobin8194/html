@@ -1,0 +1,149 @@
+<!--
+    <form>
+    웹 페이지 내에서 사용자로부터 입력을 받을 때 사용하는 태그이다
+    사용자가 입력한 데이터를 서버로 보낼때 form 요소를 사용한다
+
+    아이디 입력 비밀번호 입력 등 form 요소들을 <form> 태그로 묶는다
+    <form method="서버로 전송할 데이터 방식" action="서버로 데이터를 전달하기 위한 페이지">
+        입력 요소
+    </form>
+    method : get 또는 post 방식
+    get -> url을 통해 데이터를 전송
+           사용자가 입력한 데이터는 서버 페이지로 보내는데 이때 url에 입력한 데이터를 실어서 보낸다. 
+           속도가 빠르다
+           화면에 노출되기 때문에 보안적인 데이터 입력에서는 사용하면 안된다
+    post -> body로 감싼 데이터를 서버로 전송한다
+            속도가 느리다
+            입력한 데이터를 노출시키지 않고 서버에게 보내기 떄문에 아이디나 비밀번호를 입력해서 서버에 보낼때 이용
+    action : 파일이름.php, 파일이름.jsp
+
+    <input> 입력상자
+    사용자로 부터 데이터를 입력받기 위해 사용하는 폼요소
+
+    <input>의 type속성
+    text : 사용자로부터 문자를 입력받는 글상자
+    password : 사용자로부터 비밀번호를 입력받는 글상자
+               입력하는 내용이 사용자 눈에 안보임
+    submit : 사용자로부터 입력받은 데이터를 서버에세 제출하는 버튼
+    reset : 사용자로부터 입력받은 데이터를 초기화하는 버튼
+    button : 아무런 이벤트가 없는 버튼. 버튼에 자바스크립트를 적용하여 버튼에 기능 부여
+    radio : 사용자로부터 여러 개 옵션 중에서 단 하나의 옵션만 입력받을 수 있도록 하는 버튼
+            라디오 버튼은 그룹을 맺어 줘야 단 하나만 선택된다
+            라디오는 그룹을 맺기 위해서 각 라디오 버튼의 name 속성값이 동일해야한다
+            name 값이 다 같기 때문에 어떤 값이 넘어 가는지 명확하지 않기 때문에 value값을 반드시 지정해야 한다
+    checkbox : 사용자로부터 여러 옵션 중에서 다수의 옵션을 입력받을 수 있도록 하는 버튼
+               그룹으로 묶기위해서 name 값을 같게하여 서버에게 그룹임을 인식하게 해준다
+               value 값은 각각 다르게 하여 각 checkbox를 클릭했을때 서버에게 다른 값으로 취급하게 한다
+    file : 사용자로부터 원하는 파일을 입력받아 서버로 전송하기 위한 상자
+           파일을 사용하려면 <form> 태그에 enctype 속성을 입력해야 한다 -> <form method="GET" action="text.php" enctype="multipart/form-data">
+           기본적으로 사용자가 입력한 정보둘은 텍스트로 서버에게 전송된다 file은 바이너리 파일이므로 텍스트로 서버에게 전송할 수 없다. 
+           따라서 서버에게 문자타입뿐 아니라 여러 형태로 전송할 수 있게 설정하는 것이다
+    
+    size 속성
+    : 입력상자의 크기를 설정하는 속성
+      보여지는 사이즈 조절임 글자는 막 둘어 간다
+    
+    maxLength
+    : 입력할 수 있는 값의 길이를 설정하는 속성
+
+    placholder
+    : 사용자가 입력 전에 특정 데이터를 입력할 수 있도록 안내햐주는 값을 설정하는 속성
+
+    name 속성
+    : 해당 태그의 이름을 지어준다 
+      -> 요소의 이름을 설정하여 서버에서 요소의 값을 읽을 수 있도록 해준다 
+      -> 입력한 데이터를 서버에서 받기 위헤서 필요한 속성
+
+    value 속성
+    : 요소의 실제 값을 지정
+      서버에서 name의 실제 값으로 사용
+      사용자가 입력한 값
+      서버로 넘어 가는 실제 값
+      아이디 알아서 입력되는 기능을 이 속성으로 구현 -> 아이디와 비번을 쿠키에 저장해놓고 value에 저장된 값을 지정하여 자동 입력되게 한다
+
+    id 속성
+    : body 내 모든 요소에서 사용할 수 있다
+      css나 자바스크립트에서 id 속성을 활용 -> 특정 요소에 스타일을 지정하거나 기능을 구현
+      현재 페이지 내에서 특정 요소에 고유한 이름을 지정 -> html 문서 내 동일한 id 명은 존재할 수 없다
+
+    required 속성
+    : 사용자가 데이터를 필수로 입력하도록 함
+      required로 지정된 곳에 입력하지 않고 submit 버튼을 클릭하면 다음 페이지로 안 넘어간다
+
+    checked 속성
+    : 여러개의 라디오버튼 또는 체크박스 중에서 미리 선택될 옵션을 지정
+
+    readonly 속성
+    : 사용자가 입력 필드는 볼 수 있으나 수정할 수 없게 설정
+
+    <select>
+    : 여러개의 옵션이 드롭 다운 리스트로 되어 있고 그 중에서 단 하나의 옵션만 입력받을 수 있다
+      <option> 요소를 통해 선택할 수 있는 옵션을 설정
+
+    <textArea>
+    : 여러 줄 입력상자
+      사용자로부터 여러 줄의 텍스트를 입력받는 글상자
+      <textArea cols="가로 글자수" rows="세로 글자수">
+      value 값을 따로 지정하지 않고 글상자에 입력한 글이 자동으로 서버로 넘어 간다
+
+    <fieldset> <legend>
+    : <fieldset>은 폼 요소를 그룹으로 묶을 떄 사용하고 <legend>는 <fieldset>의 제목을 만들때 시용
+
+    <label>
+    : 폼 양식에 이름을 붙이는 요소
+      label 요소와 다른 요소를 연결하면 해당 요소의 영역이 넓어 진다
+      <lable><input type="radio"></label>
+      <label for ="man">남자</label><input type="radio" id="man">
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼</title>
+</head>
+<body>
+    <form method="get" action="next.php" enctype="multipart/form-data">
+        <p>아이디 : <input type="text" size="30" maxlength="10" placeholder="아이디를 입력하시오" id="userid" name="userid" value="apple" required></p>
+        <p>비밀번호 : <input type="password" size="30" maxlength="10" placeholder="비밀번호를 입력하시오" id="userpw" name="userpw" required></p>
+
+        <fieldset>
+            <legend>성별</legend>
+            <label>남자<input type="radio" name="gender" value="남" checked></label>
+            <label for="female">여자</label><input type="radio" name="gender" value="여" id="female">
+        </fieldset>
+
+        <fieldset>
+            <legend>취미</legend>
+            <label><input type="checkbox" name="hobby" value="드라이브">드라이브</label>
+            <label><input type="checkbox" name="hobby" value="여행">여행</label>
+            <label><input type="checkbox" name="hobby" value="노래듣기">노래듣기</label>
+        </fieldset>
+
+        <p>사진 : <input type="file" name="picture"></p>
+
+        <p>우편번호 : <input type="text" name="post" size="5" readonly> <input type="button" value="검색"></p>
+
+        <p>
+            직업 :
+            <select name="job">
+                <!--선택하세요가 선택되고 넘어 갔을 경우를 자바스크립트에서 처리하기 위해 value를 #으로 지정-->
+                <option value="#">선택하세요</option>
+                <option value="공무원">공무원</option>
+                <option value="개발자">개발자</option>
+                <option value="서비스직">서비스직</option>
+                <option value="사무직">사무직</option>
+           </select>
+        </p>
+
+        <p>자기소개</p>
+        <p><textarea cols="70" rows="20" name="introduce"></textarea></p>
+
+        <p>
+            <input type="reset" value="초기화">
+            <input type="submit" value="전송">
+            <input type="button" value="클릭" onclick="location.href='http://www.naver.com'">
+        </p>
+    </form>
+</body>
+</html>

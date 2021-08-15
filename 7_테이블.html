@@ -1,0 +1,199 @@
+<!--
+    <table>
+    여러 종류의 데이터를 보기 좋게 정리하여 보여주는 표
+    html에서 예전에 <table> 태그를 이용해서 웹 사이트 틀을 만들었다. 현재는 div나 시멘틱 태그로 웹 사이트 틀을 만든다.
+
+    <table>로 시작하고 </table>로 종료
+    <tr> 태그로 테이블의 층을 구성한다
+    <th> 태그로 각 열의 제목을 나타내고 <td> 태그로 테이블의 셀을 나눠 준다
+    <th>와 <td>의 차이는 <th>는 글자가 가운데 정렬되고 두껍게 나온다
+        
+    <table> 속성
+    border : 테이블의 테두리의 두께를 설정(기본값은 0)
+    width : 테이블 자체의 가로 폭을 설정(px, %)
+    height : 테이블 자체의 세로 폭을 설정(px, %)
+    align : 테이블 자체의 위치를 설정(left center right)
+
+    <tr><th><td> 속성
+    width : 셀의 가로 폭을 설정
+    height : 셀의 세로 폭을 설정
+    align : 셀의 텍스트의 위치를 설정(left center right)
+    colspan : 가로로 열을 합친다 (colspan = "합칠 열의 개수")
+    rowspan : 세로로 행을 합친다 (rowspan = "합칠 행의 수")
+
+    <colgroup>
+    컬럼(th 또는 td)에 적용할 스타일을 해당 태그에서 미리 설정한다
+    특히 각 컬럼의 길이를 설정하는데 가장 많이 사용한다
+
+    <caption>
+    제목을 붙일 때 사용한다
+    기본위치는 표의 상단 중앙이다
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블</title> 
+</head>
+<body>
+    <h2>테이블 - 1_table 속성</h2>
+    <!--width = "600" : 고정된 크기. 화면의 크기가 커지든 작아지든 고정-->
+    <table border = "1" width = "600" height="100" align="left">
+        <tr>
+            <th>제목 1</th>
+            <th>제목 2</th>
+            <th>제목 3</th>
+        </tr>
+        <tr>
+            <td>셀 1</td>
+            <td>셀 2</td>
+            <td>셀 3</td>
+        </tr>
+    </table><br>
+    <!--width="50%" : 화면에 반 즉 화면에 대한 상대적인 크기-->
+    <table border = "2" width = "50%" height="100" align="center">
+        <tr>
+            <th>제목 1</th>
+            <th>제목 2</th>
+            <th>제목 3</th>
+        </tr>
+        <tr>
+            <td>셀 1</td>
+            <td>셀 2</td>
+            <td>셀 3</td>
+        </tr>
+    </table><br>
+    
+    <h2>테이블 - 2_td & th 속성</h2>
+    <table border = "1" width = "600">
+        <tr height = "40">
+            <!--th나 td에 width나 height를 적용 하면 해당 열이나 행에 다 적용된다-->
+            <th width = "50" height = "40">번호</th>
+            <th width = "80">이름</th>
+            <th width = "50">나이</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td align="center">김사과</td>
+            <td align="center">23</td>
+            <td>서울시 서초구</td>
+        </tr>
+        <tr>
+            <td align="center">2</td>
+            <td align="center">김메론</td>
+            <td align="center">63</td>
+            <td>서울시 강남구</td>
+        </tr>
+        <tr>
+            <td align="center">3</td>
+            <td align="center">김체리</td>
+            <td align="center">73</td>
+            <td>서울시 동작구</td>
+        </tr>
+    </table><br>
+
+    <h2>테이블 - 3_colspan & rowspan</h2>
+    <table border = "1" width = "600">
+        <tr height="20">
+            <td>1번 셀</td>
+            <td colspan="2">2번 셀</td>
+        </tr>
+        <tr height="20">
+            <td>4번 셀</td>
+            <td>5번 셀</td>
+            <td rowspan="3">6번 셀</td>
+        </tr>
+        <tr height="20">
+            <td>7번 셀</td>
+            <td>8번 셀</td>
+        </tr>
+        <tr height="20">
+            <td>10번 셀</td>
+            <td>11번 셀</td>
+        </tr>
+    </table><br>
+
+    <h2>테이블 - 4_colgroup & caption</h2>
+    <table border="1" width="600">
+        <caption>
+            <srong>프론트엔드 수강생</srong><br>
+            주말 오후 프론트엔드 수강생 주소록
+        </caption>
+        <colgroup>
+            <!--1번째 열-->
+            <col width="100">
+            <!--2번째 열-->
+            <col width="250">
+            <!--3번째 열-->
+            <col width="250">   
+        </colgroup>
+        <tr>
+            <th>이름</th>
+            <th>연락처</th>
+            <th>주소</th>    
+        </tr>
+        <tr>
+            <td align="center">김딸기</td>
+            <td>010 1234 8194</td>
+            <td>서울시 강남구</td>   
+        </tr>
+        <tr>
+            <td align="center">김체리</td>
+            <td>010 1234 8194</td>
+            <td>서울시 강남구</td>   
+        </tr>
+        <tr>
+            <td align="center">김사과</td>
+            <td>010 1234 8194</td>
+            <td>서울시 강남구</td>   
+        </tr>
+        <tr>
+            <td align="center">김포도</td>
+            <td>010 1234 8194</td>
+            <td>서울시 강남구</td>   
+        </tr>
+    </table><br>
+
+    <h2>테이블 - 5_웹 사이트 틀</h2>
+    <!--테이블을 만들고 border를 0으로 지정하면 웹 사이트 틀이 된다
+        복잡한 테이블을 만들때는 전체 테이블 만들고 한 셀에 또 테이블을 만드는 식으로 만든다
+        셀안에 들어 가는 테이블의 width와 height를 젠체 테이블에 딱 들어가게 지정해야한다
+    -->
+    <table border="1" width="800" align="center">
+        <tr height = "100">
+            <td>1번째 셀</td>
+        </tr>
+        <tr height = "300">
+            <td>
+                <table border="1" width="100%" height="300">
+                    <tr>
+                        <td>2번째 셀</td>
+                        <td>3번째 셀</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr height = "100">
+            <td>
+                <table border="1" width="100%" height="100">
+                    <tr>
+                        <td width="500">4번째 셀</td>
+                        <td width="300">
+                            <table border="1" width="100%"height="100">
+                                <tr>
+                                    <td>5번째 열</td>
+                                </tr>
+                                <tr>
+                                    <td>6번째 열</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

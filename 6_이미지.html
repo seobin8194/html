@@ -1,0 +1,58 @@
+<!--
+    <img src="이미지가 위치하는 주소 또는 파일경로(파일명)" alt="불러 오고자하는 이미지가 없을때 대체할 문자/리더기 웹을 읽을 때 alt를 읽어 이미지를 들려 준다">
+    
+    이미지가 위치하는 주소 또는 파일경로작성하는 법
+    1. 절대경로
+       고유한 경로. 처음부터 끝까지 전체 경로
+    2. 상대경로
+       이미지를 삽입할 html문서를 기준으로 경로지정
+       html문서를 기준으로 하위폴더에 있는지 상위폴더에 있는지에 따라 작성
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+</head>
+<body>
+    <h2>이미지</h2>
+    <!--
+        절대경로 - 인터넷에 있는 이미지
+        웹 상의 이미지 우클릭 -> 이미지주소 복사 -> 복사한 이미지 주소 src에 붙여 넣기
+    -->
+    <img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png" alt="다음 로고"/>
+    <!--
+        절대경로 - 내가 가지고 있는 이미지
+        내가 가지고 있는 이미지의 전체 경로가져 와서 src에 붙여 넣기
+
+        liveserver에서 이미지를 불러 오지 못한다 -> 내가 만든 웹을 다른 사람이 열때 여는 사람의 컴퓨터 경로에 햐당 이미지가 있을리 없다
+    -->
+    <img src="C:\Users\정서빈\Desktop\html\halloween1.png" alt="halloween1"/>
+
+    <!--
+         상대경로 이미지는 liveserver에서 로드됨 -> 파일질라에 사이트를 올린다고 생각할때 html문서 폴더를 올리면 그 폴더에서 이미지를 찾으면 되니까
+         탐색기에 이미지파일이 보여야 liveserver에서 이미지 로드가능
+    -->
+    <!--
+        상대경로 - 이미지가 html문서와 같은 폴더안에 있을 경우
+        파일명만 또는 ./파일명 (./는 현재 폴더라는 의미)       
+    -->
+    <img src="./halloween2.png" alt="hallowwen2"/>
+    <!--
+        상대경로 -  이미지가 하위폴더에 있는 경우
+        하위폴더명/파일명 또는 ./하위폴더명/파일명
+    -->
+    <img src="./image/halloween3.png" alt="halloween3"/>
+    <!--
+        상대경로 - 이미지가 상위폴더에 있는 경우
+        ../파일명 (../는 상위폴더를 의미)        
+    -->
+    <img src="../halloween4.png" alt="halloween4"/>
+    <!--
+        상대경로 - 이미지가 상위폴더에 다른 하위폴더에 있는 경우
+         ../다른 폴더/파일명
+    -->
+    <img src="../images/halloween5.png" alt="halloween5"/>
+</body>
+</html>
